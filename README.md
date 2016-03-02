@@ -6,5 +6,6 @@ Ruokalista ranteeseen
 * http://messi.hyyravintolat.fi/rss/fin/16
 
 ### pebble
+* https://www.pebble.com/
 * https://developer.pebble.com/
 * https://developer.pebble.com/docs/pebblejs/
