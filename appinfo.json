@@ -1,0 +1,44 @@
+{
+  "appKeys": {},
+  "capabilities": [
+    "configurable"
+  ],
+  "companyName": "Pop",
+  "longName": "UnicafeMenu",
+  "resources": {
+    "media": [
+      {
+        "file": "images/menu_icon.png",
+        "menuIcon": true,
+        "name": "IMAGE_MENU_ICON",
+        "type": "bitmap"
+      },
+      {
+        "file": "images/logo_splash.png",
+        "name": "IMAGE_LOGO_SPLASH",
+        "type": "bitmap"
+      },
+      {
+        "file": "images/tile_splash.png",
+        "name": "IMAGE_TILE_SPLASH",
+        "type": "bitmap"
+      },
+      {
+        "file": "fonts/UbuntuMono-Regular.ttf",
+        "name": "MONO_FONT_14",
+        "type": "font"
+      }
+    ]
+  },
+  "sdkVersion": "3",
+  "shortName": "UnicafeMenu",
+  "targetPlatforms": [
+    "aplite"
+  ],
+  "uuid": "2261d887-f65e-402a-b134-93821296a75b",
+  "versionCode": 1,
+  "versionLabel": "0.2",
+  "watchapp": {
+    "watchface": false
+  }
+}
