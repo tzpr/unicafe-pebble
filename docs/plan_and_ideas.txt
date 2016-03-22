@@ -1,0 +1,70 @@
+
+ Unicafe Pebble - ruokalista ranteeseen
+
+
+## Suhde aikaan
+
+ Eletään nykyhetkessä, ei menneessä eikä tulevassa. Tarjotaan vain
+ kuluvan päivän menut. Sovelluksen tarkoitus on auttaa ruokapaikan
+ valinnasssa, sitä ei ole tarkoitettu tulevaisuuden suunnitteluun.
+
+
+## ATK
+
+ Suunnitteilla kolme automaattista toimintoa.
+
+ 1. Tarjotaan käyttäjälle lemppariruokia käyttäjän valintojen perusteella.
+    Menuista etsitään käyttäjän valitsemien lempiruokien perusteella lounaita
+    ja näytetään ne. Valinnat voi resetoida.
+
+ 2. Ravintolalistauksessa eniten selattu ravintola on listan ensimmäisenä.
+    Ravintolalistan järjestys pohjautuu käyttäjän valintoihin.
+
+ 3. Kampuksen valinta sijainnin perusteella. Näytetään vain lähimmän kampuksen
+    lounaat.
+
+
+## Käyttöliittymän rakenne
+
+  * Etusivu
+
+     Tarjolla olevat lemppariruoat listattuna. Valitsemalla pääsee selaaman
+     ko. ravintolan koko menua.
+
+     Siirtymät:
+      - Ravintolalistaukseen
+      - Asetuksiin
+
+  * Ravintolalistaus
+
+     Näytetään lista kampuksen ravintoloista. Ensimäisenä eniten osumia
+     saanut ravintola. Valitsemalla ravintolan pääsee ravintolan menuun.
+
+     Siirtymät:
+      - Ravintolan ruokalistaan
+      - Etusivulle
+
+  * Ravintolan ruokalista
+
+     Näytetään ravintolan päivän ruokalista. Listaa voi selata. Aterian voi
+     merkitä lempparilounaaksi valitsemalla sen.
+
+     Siirtymät:
+      - Ravintolalistaukseen
+
+  * Asetukset
+
+     Näytetään lista lempparilounaista. Lempparilounaita voi poistaa eli
+     resetoida valinnat.
+
+     Siirtymät:
+      - Etusivulle
+
+
+
+
+
+
+
+
+
