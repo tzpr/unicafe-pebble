@@ -1,17 +1,22 @@
 
  Unicafe Pebble - ruokalista ranteeseen
 
+ Näytetään Unicafe-ravintolan päivän ruokalista Pebble-rannekellossa. 
+ Käyttäjä voi valita ravintolalistasta ravintolan ja valitun ravintolan 
+ kuluvan päivän ruokalista näytetään käyttäjälle.
+
 
 ## Suhde aikaan
 
- Eletään nykyhetkessä, ei menneessä eikä tulevassa. Tarjotaan vain
- kuluvan päivän menut. Sovelluksen tarkoitus on auttaa ruokapaikan
- valinnasssa, sitä ei ole tarkoitettu tulevaisuuden suunnitteluun.
+ Eletään nykyhetkessä ja tarjotaan vain kuluvan päivän menut. 
+ Sovelluksen tarkoitus on auttaa ruokapaikan valinnasssa, sitä ei 
+ ole tarkoitettu tulevaisuuden suunnitteluun.
 
 
-## ATK
+## Toiminnallisuksia
 
- Suunnitteilla kolme automaattista toimintoa.
+ Suunnitteilla kolme lisätoimintoa perusmenulistauksen lisäksi. (Nämä ovat 
+ ideoita joita ei välttämättä tulla toteuttamaan kokonaisuudessaan)
 
  1. Tarjotaan käyttäjälle lemppariruokia käyttäjän valintojen perusteella.
     Menuista etsitään käyttäjän valitsemien lempiruokien perusteella lounaita
