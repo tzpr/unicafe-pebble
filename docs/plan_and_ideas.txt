@@ -2,8 +2,8 @@
  Unicafe Pebble - ruokalista ranteeseen
 
  Näytetään Unicafe-ravintolan päivän ruokalista Pebble-rannekellossa. 
- Käyttäjä voi valita ravintolalistasta ravintolan ja valitun ravintolan 
- kuluvan päivän ruokalista näytetään käyttäjälle.
+ Käyttäjä voi valita ravintolalistasta kampuksen, ravintolan. Valitun 
+ ravintolan kuluvan päivän ruokalista näytetään käyttäjälle.
 
 
 ## Suhde aikaan
@@ -16,7 +16,7 @@
 ## Toiminnallisuksia
 
  Suunnitteilla kolme lisätoimintoa perusmenulistauksen lisäksi. (Nämä ovat 
- ideoita joita ei välttämättä tulla toteuttamaan kokonaisuudessaan)
+ ideoita joita ei välttämättä tulla toteuttamaan)
 
  1. Tarjotaan käyttäjälle lemppariruokia käyttäjän valintojen perusteella.
     Menuista etsitään käyttäjän valitsemien lempiruokien perusteella lounaita
@@ -33,12 +33,20 @@
 
   * Etusivu
 
-     Tarjolla olevat lemppariruoat listattuna. Valitsemalla pääsee selaaman
+     Tarjolla olevat lemppariruoat listattuna (optional). Valitsemalla pääsee selaaman
      ko. ravintolan koko menua.
 
      Siirtymät:
-      - Ravintolalistaukseen
+      - Kampuslistaukseen
       - Asetuksiin
+      
+  * Kampuslistaus
+     
+    Listataan kampukset joilla on Unicafe-ravintoloita.
+     
+    Siirtymät:
+     - Ravintolalistaukseen
+  
 
   * Ravintolalistaus
 
@@ -59,8 +67,8 @@
 
   * Asetukset
 
-     Näytetään lista lempparilounaista. Lempparilounaita voi poistaa eli
-     resetoida valinnat.
+     Näytetään lista lempparilounaista (optional). Lempparilounaita voi poistaa eli
+     resetoida valinnat (optional).
 
      Siirtymät:
       - Etusivulle
