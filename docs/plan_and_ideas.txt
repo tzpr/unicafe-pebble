@@ -2,7 +2,7 @@
  Unicafe Pebble - ruokalista ranteeseen
 
  Näytetään Unicafe-ravintolan päivän ruokalista Pebble-rannekellossa. 
- Käyttäjä voi valita ravintolalistasta kampuksen, ravintolan. Valitun 
+ Käyttäjä voi valita listasta kampuksen ja ravintolan. Valitun 
  ravintolan kuluvan päivän ruokalista näytetään käyttäjälle.
 
 
@@ -50,8 +50,8 @@
 
   * Ravintolalistaus
 
-     Näytetään lista kampuksen ravintoloista. Ensimäisenä eniten osumia
-     saanut ravintola. Valitsemalla ravintolan pääsee ravintolan menuun.
+     Näytetään lista kampuksen ravintoloista. Ensimmäisenä eniten osumia
+     saanut ravintola (optional). Valitsemalla ravintolan pääsee ravintolan menuun.
 
      Siirtymät:
       - Ravintolan ruokalistaan
@@ -60,7 +60,7 @@
   * Ravintolan ruokalista
 
      Näytetään ravintolan päivän ruokalista. Listaa voi selata. Aterian voi
-     merkitä lempparilounaaksi valitsemalla sen.
+     merkitä lempparilounaaksi valitsemalla sen (optional).
 
      Siirtymät:
       - Ravintolalistaukseen
