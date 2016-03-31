@@ -1,7 +1,6 @@
 
-var localStorageWrapper = (function localStorageApi(){
-
-
+module.exports = (function localStorageApi(){
+    
     function resetFavMeals(){
         // erase favourite meals from local storage
     }
@@ -27,6 +26,3 @@ var localStorageWrapper = (function localStorageApi(){
     };
 
 })();
-
-
-module.exports = localStorageWrapper;

@@ -1,4 +1,5 @@
-var server = (function server() {
+
+module.exports = (function server() {
 
     var staticDevMenuJson,
         staticDevRestaurantsJson,
@@ -34,5 +35,3 @@ var server = (function server() {
     };
 
 })();
-
-module.exports = server;
