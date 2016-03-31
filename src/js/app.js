@@ -6,6 +6,8 @@
 
 var UI = require('ui');
 var Vector2 = require('vector2');
+var server = require('modules/server-communication');
+
 
 var main = new UI.Card({
   title: 'UnicafeMenu',
@@ -33,6 +35,8 @@ main.on('click', 'up', function(e) {
   menu.on('select', function(e) {
     console.log('Selected item #' + e.itemIndex + ' of section #' + e.sectionIndex);
     console.log('The item is titled "' + e.item.title + '"');
+    console.log('CALLING SERVER: getRestaurantsByCampus: ' + JSON.stringify(server.getRestaurantsByCampus('daa')));
+    console.log('CALLING SERVER: getMenuByRestaurant: ' + JSON.stringify(server.getMenuByRestaurant('dii')));
   });
   menu.show();
 });
