@@ -1,5 +1,5 @@
 // data from http://messi.hyyravintolat.fi/publicapi/restaurants
-var restaurantsJson = {
+module.exports = {
   "status": "OK",
   "data": [
     {
@@ -129,5 +129,3 @@ var restaurantsJson = {
     }
   ]
 };
-
-module.exports = restaurantsJson;

@@ -1,5 +1,5 @@
 // data from http://messi.hyyravintolat.fi/publicapi/restaurant/16
-var menuJson = {
+module.exports = {
   "data": [
     {
       "date_sv": "MÃ¥n 28.03",
@@ -1962,5 +1962,4 @@ var menuJson = {
   }
 };
 
-module.exports = menuJson;
 
