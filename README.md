@@ -3,9 +3,11 @@ Ruokalista ranteeseen
 
 
 virtualenv pebble-env --python=python2.7
+
 . pebble-env/bin/activate
 
 export PEBBLE_PHONE=phone-ip
+
 pebble build && pebble install
 
 ### data
