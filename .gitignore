@@ -2,7 +2,6 @@
 LICENSE
 build/
 doc.html
-resources/
 src/js/clock/
 src/js/lib/
 src/js/loader.js
