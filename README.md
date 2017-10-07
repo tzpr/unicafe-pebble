@@ -11,8 +11,7 @@ export PEBBLE_PHONE=phone-ip
 pebble build && pebble install
 
 ### data
-* http://www.hyyravintolat.fi/#/16/2
-* http://messi.hyyravintolat.fi/rss/fin/16
+* http://www.unicafe.fi
 
 ### pebble
 * https://www.pebble.com/
