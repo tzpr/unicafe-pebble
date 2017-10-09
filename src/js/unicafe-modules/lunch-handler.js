@@ -12,13 +12,13 @@ module.exports = (function(){
         // check cache from locastorage
 
         // get menu from server if needed
-        var menuJson = server.getMenuByRestaurant(cafeId); 
-        
-        // parse menu
+        var menuObj = server.getMenuByRestaurant(cafeId, lunchUI); 
+
+
 
         // cache to locastorage 
 
-        return lunchUI(menuJson);
+        //return lunchUI(menuObj);
     }
 
 

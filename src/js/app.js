@@ -8,7 +8,7 @@ var lunchMenu = require('unicafe-modules/lunch-handler');
 
 
 var main = new UI.Card({
-    title: 'PebbleCafe 0.9',
+    title: 'PebbleCafe',
     body: 'Lounasterve! Ravintolat valitse R. Kampukset valitse K',
     action: {
         up: 'images/menu_icon.png',
@@ -21,6 +21,10 @@ var main = new UI.Card({
 
 main.on('click', 'up', function (e) {
     var campuses = uniCafes.campuses();
+
+    console.log("DADAA");
+
+    console.warn("DIDOODODODO");
 
     campuses.on('select', function (e) {
         var cafes = uniCafes.byCampus(e.item.id);
@@ -37,7 +41,7 @@ main.on('click', 'down', function(e){
     var cafes = uniCafes.all();
     
     cafes.on('select', function (e) {
-        lunchMenu.get(e.item.id).show();
+        lunchMenu.get(e.item.id);
     });
     cafes.show();
 });

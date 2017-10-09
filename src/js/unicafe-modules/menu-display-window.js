@@ -1,11 +1,15 @@
 var UI = require('ui');
 
 
-function showLunchMenu(menuJson){
+function showLunchMenu(menuObj){
+
+
+    // this component could also filter the correct day
 
     var lunchMenu = new UI.Card({
-        title: 'Korona',
-        body: 'Lihapullia ja salaattia',
+        title: menuObj.cafe,
+        body: menuObj.day[0].menu,
+        scrollable: true,
     });
 
     return lunchMenu;
