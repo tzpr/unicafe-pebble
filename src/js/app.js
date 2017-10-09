@@ -1,27 +1,45 @@
 /**
- * Unicafe Menu
+ * Pebble Cafe
  */
 
 var UI = require('ui');
-var Vector2 = require('vector2');
-var server = require('modules/server-communication');
-var localStorage = require('modules/local-storage-wrapper');
+var uniCafes = require('unicafe-modules/cafe-container');
+var lunchMenu = require('unicafe-modules/lunch-handler');
 
 
-var splashWindow = new UI.Window();
-
-// Text element to inform user
-var text = new UI.Text({
-    position: new Vector2(0, 0),
-    size: new Vector2(144, 168),
-    text:'Haetaan menuja...',
-    font:'GOTHIC_28_BOLD',
-    color:'black',
-    textOverflow:'wrap',
-    textAlign:'center',
-    backgroundColor:'white'
+var main = new UI.Card({
+    title: 'PebbleCafe 0.9',
+    body: 'Lounasterve! Ravintolat valitse R. Kampukset valitse K',
+    action: {
+        up: 'images/menu_icon.png',
+        down: 'images/menu_icon.png',
+        select: 'images/menu_icon.png'
+    }
 });
 
-// Add to splashWindow and show
-splashWindow.add(text);
-splashWindow.show();
+
+
+main.on('click', 'up', function (e) {
+    var campuses = uniCafes.campuses();
+
+    campuses.on('select', function (e) {
+        var cafes = uniCafes.byCampus(e.item.id);
+
+        cafes.on('select', function (e) {
+            lunchMenu.get(e.item.id).show();
+        });
+        cafes.show();
+    });
+    campuses.show();
+});
+
+main.on('click', 'down', function(e){
+    var cafes = uniCafes.all();
+    
+    cafes.on('select', function (e) {
+        lunchMenu.get(e.item.id).show();
+    });
+    cafes.show();
+});
+
+main.show();

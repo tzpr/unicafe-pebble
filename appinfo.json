@@ -33,7 +33,8 @@
   "sdkVersion": "3",
   "shortName": "UnicafeMenu",
   "targetPlatforms": [
-    "aplite"
+    "aplite",
+    "basalt"
   ],
   "uuid": "2261d887-f65e-402a-b134-93821296a75b",
   "versionCode": 1,
