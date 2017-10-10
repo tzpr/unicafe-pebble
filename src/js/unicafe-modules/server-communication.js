@@ -14,7 +14,7 @@ module.exports = (function server() {
     }
 
 
-    function menuByRestaurant(restaurantId, succesHandler) {
+    function menuByRestaurant(restaurantId, display) {
         if (staticDevMenuJson) {
             return staticDevMenuJson;
         } else {
@@ -26,7 +26,7 @@ module.exports = (function server() {
             },
             function (data, status, request) {
                 console.log('GET success');
-                succesHandler(parse(data, restaurantId)).show();
+                display(data, restaurantId);
             },
             function (message, status, request) {
                 if (status === 'OK') {
@@ -36,29 +36,6 @@ module.exports = (function server() {
                 }
             });
         }
-    }
-
-    function parse(data, cafeId){
-        // parse menu
-        var menuObj = {};
-        menuObj.cafeId = cafeId;
-        menuObj.cafe = data.information.restaurant;
-        var dayz = data.data;
-        var days = [];
-        for (var i = 0; i < 5; i += 1){ // take just first 5 days
-            var arr = dayz[i].data;
-            var lunch = '';
-            for (var ii = 0, nn = arr.length; ii < nn; ii += 1){
-                lunch = lunch  + arr[ii].name + ' ' ;
-                lunch = lunch + '(' + arr[ii].price.name + ') \n';
-            }
-            days.push({
-                date: dayz[i].date_en,  // "Mon 09.10"
-                menu: lunch,
-            });
-        }
-        menuObj.day = days;
-        return menuObj;
     }
 
     

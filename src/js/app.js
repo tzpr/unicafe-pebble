@@ -5,6 +5,7 @@
 var UI = require('ui');
 var uniCafes = require('unicafe-modules/cafe-container');
 var lunchMenu = require('unicafe-modules/lunch-handler');
+var Settings = require('settings');
 
 
 var main = new UI.Card({
@@ -17,20 +18,20 @@ var main = new UI.Card({
     }
 });
 
+// example
+//Settings.data('playerInfo', { id: 1, name: 'Gordon Freeman' });
+//var playerInfo = Settings.data('playerInfo');
+//console.log("Player's name is " + playerInfo.name);
 
 
 main.on('click', 'up', function (e) {
     var campuses = uniCafes.campuses();
 
-    console.log("DADAA");
-
-    console.warn("DIDOODODODO");
-
     campuses.on('select', function (e) {
         var cafes = uniCafes.byCampus(e.item.id);
 
         cafes.on('select', function (e) {
-            lunchMenu.get(e.item.id).show();
+            lunchMenu.get(e.item.id);
         });
         cafes.show();
     });
