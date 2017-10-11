@@ -2,14 +2,13 @@
  * Pebble Cafe
  */
 
-var Clock = require('clock');
-//var Settings = require('settings');
-var Vibe = require('ui/vibe');
-var Wakeup = require('wakeup');
-var UI = require('ui');
-var uniCafes = require('unicafe-modules/cafe-container');
-var lunchMenu = require('unicafe-modules/lunch-handler');
-
+var Clock = require('clock'),
+    Wakeup = require('wakeup'),
+    UI = require('ui'),
+    uniCafes = require('unicafe-modules/cafe-container'),
+    lunchMenu = require('unicafe-modules/lunch-handler'),
+    log = require('unicafe-modules/uni-util').log,
+    shortVibeNotification = require('unicafe-modules/uni-util').shortVibe;
 
 
 var main = new UI.Card({
@@ -53,59 +52,60 @@ main.on('click', 'down', function(e){
 });
 
 
-// Single wakeup event handler example:
 Wakeup.on('wakeup', function(e) {
-    Vibe.vibrate('long');
-    //console.log('Wakeup event! ' + JSON.stringify(e));
+    shortVibeNotification();
 });
+
+// kind of a hackish thing before setting wakeup events.
+Wakeup.cancel('all');
 
 // Set the wakeup events
 Wakeup.schedule({time: Clock.weekday('monday', 10, 15)},
     function(e) {
         if (e.failed) {
-            console.log('Wakeup set failed: ' + e.error);
+            log('Wakeup set failed: ' + e.error);
         } else {
-            console.log('Wakeup set! Event ID: ' + e.id);
+            log('Wakeup set! Event ID: ' + e.id);
         }
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('tuesday', 19, 20)},
+Wakeup.schedule({time: Clock.weekday('tuesday', 10, 15)},
     function(e) {
         if (e.failed) {
-            console.log('Wakeup set failed: ' + e.error);
+            log('Wakeup set failed: ' + e.error);
         } else {
-            console.log('Wakeup set! Event ID: ' + e.id);
+            log('Wakeup set! Event ID: ' + e.id);
         }
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('tuesday', 19, 21)},
+Wakeup.schedule({time: Clock.weekday('wednesday', 10, 15)},
     function(e) {
         if (e.failed) {
-            console.log('Wakeup set failed: ' + e.error);
+            log('Wakeup set failed: ' + e.error);
         } else {
-            console.log('Wakeup set! Event ID: ' + e.id);
+            log('Wakeup set! Event ID: ' + e.id);
         }
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('tuesday', 19, 22)},
+Wakeup.schedule({time: Clock.weekday('thursday', 10, 15)},
     function(e) {
         if (e.failed) {
-            console.log('Wakeup set failed: ' + e.error);
+            log('Wakeup set failed: ' + e.error);
         } else {
-            console.log('Wakeup set! Event ID: ' + e.id);
+            log('Wakeup set! Event ID: ' + e.id);
         }
     }
 );
 
-Wakeup.schedule({time:  Clock.weekday('tuesday', 19, 26)},
+Wakeup.schedule({time:  Clock.weekday('friday', 10, 15)},
     function(e) {
         if (e.failed) {
-            console.log('Wakeup set failed: ' + e.error);
+            log('Wakeup set failed: ' + e.error);
         } else {
-            console.log('Wakeup set! Event ID: ' + e.id);
+            log('Wakeup set! Event ID: ' + e.id);
         }
     }
 );

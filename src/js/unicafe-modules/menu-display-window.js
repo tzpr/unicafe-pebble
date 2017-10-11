@@ -9,6 +9,7 @@ module.exports = (function(){
         var days = [];
         var mealsList;
         var lunch;
+        
         menuObj.cafeId = cafeId;
         menuObj.cafe = data.information.restaurant;
 

@@ -1,5 +1,6 @@
 
 var ajax = require('ajax');
+var log = require('unicafe-modules/uni-util').log;
 
 
 module.exports = (function server() {
@@ -18,21 +19,21 @@ module.exports = (function server() {
         if (staticDevMenuJson) {
             return staticDevMenuJson;
         } else {
-            console.log('*** menuByRestaurant: ' + (SERVER_URL + restaurantId));
+            log('*** menuByRestaurant: ' + (SERVER_URL + restaurantId));
             ajax({
                 method: 'get',
                 url: (SERVER_URL + restaurantId),
                 type: 'json'
             },
             function (data, status, request) {
-                console.log('GET success');
+                log('GET success');
                 display(data, restaurantId);
             },
             function (message, status, request) {
                 if (status === 'OK') {
-                    console.log('GET success: message:' + message + " status: " + status);
+                    log('GET success: message:' + message + ' status: ' + status);
                 }else{
-                    console.log('GET failure: message:' + message + " status: " + status);
+                    log('GET failure: message:' + message + ' status: ' + status);
                 }
             });
         }
