@@ -7,6 +7,7 @@ module.exports = (function server() {
 
     // could be in settings
     var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/';
+    var FAV_SERVER_URL = 'https://favorites.pop';
     var staticDevMenuJson;
     var offlineDev = false;
 
@@ -39,10 +40,16 @@ module.exports = (function server() {
         }
     }
 
+    function searchFavorites(listOfFavMeals, display){
+        log('searchFavorites: ' + listOfFavMeals + ' from: ' + FAV_SERVER_URL);
+        display('Suosikkeja ei vielä toteutettu. Mukavaa päivän jatkoa!');
+    }
+
     
     // public api
     return {
-        getMenuByRestaurant: menuByRestaurant
+        getMenuByRestaurant: menuByRestaurant,
+        searchFavorites: searchFavorites
     };
 
 })();

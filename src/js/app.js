@@ -52,25 +52,33 @@ main.show();
 //console.log("Player's name is " + playerInfo.name);
 
 main.on('select', function (e) {
-    if(e.item.id === 2){
+    switch (e.item.id){
+    case 2:
         var cafes = uniCafes.all();
-        
+            
         cafes.on('select', function (e) {
             lunchMenu.get(e.item.id);
         });
         cafes.show();
-    }else{
+        break;
+    case 1:
         var campuses = uniCafes.campuses();
-        
+            
         campuses.on('select', function (e) {
             var cafes = uniCafes.byCampus(e.item.id);
-    
+        
             cafes.on('select', function (e) {
                 lunchMenu.get(e.item.id);
             });
             cafes.show();
         });
         campuses.show();
+        break;
+    case 888:
+        lunchMenu.getFavs();
+        break;
+    default:
+        log('ERROR: could not resolve input');    
     }
 });
 /*

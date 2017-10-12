@@ -7,6 +7,6 @@ module.exports.shortVibe = function shortVibe() {
 };
     
 module.exports.log = function log(message){
-    console.log(message);
+    console.log(message + ' this: ' + this);
 };
 
