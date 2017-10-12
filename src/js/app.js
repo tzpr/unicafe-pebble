@@ -11,15 +11,38 @@ var Clock = require('clock'),
     shortVibeNotification = require('unicafe-modules/uni-util').shortVibe;
 
 
-var main = new UI.Card({
+var main = new UI.Menu({
+    sections: [{
+        title: '          PEBBLE CAFE',
+        items: [{
+            id: 1,
+            title: ' Kampukset ',
+            subtitle: 'Kampuksen valinta',
+        },
+        {
+            id: 2,
+            title: ' Ravintolat ',
+            subtitle: 'Lista ravintoloista',
+        },
+        {
+            id: 888,
+            title: ' Suosikit ',
+            subtitle: 'Jotain ekstraa...',
+        }]
+    }]
+}); 
+    /*
+    // alternative ui
+    new UI.Card({
     title: 'PebbleCafe',
     body: 'Lounasterve! Ravintolat valitse R. Kampukset valitse K',
     action: {
         up: 'images/menu_icon.png',
         down: 'images/menu_icon.png',
         select: 'images/menu_icon.png'
-    }
-});
+    })});
+    */
+
 
 main.show();
 
@@ -28,6 +51,30 @@ main.show();
 //var playerInfo = Settings.data('playerInfo');
 //console.log("Player's name is " + playerInfo.name);
 
+main.on('select', function (e) {
+    if(e.item.id === 2){
+        var cafes = uniCafes.all();
+        
+        cafes.on('select', function (e) {
+            lunchMenu.get(e.item.id);
+        });
+        cafes.show();
+    }else{
+        var campuses = uniCafes.campuses();
+        
+        campuses.on('select', function (e) {
+            var cafes = uniCafes.byCampus(e.item.id);
+    
+            cafes.on('select', function (e) {
+                lunchMenu.get(e.item.id);
+            });
+            cafes.show();
+        });
+        campuses.show();
+    }
+});
+/*
+// for the alternative ui
 main.on('click', 'up', function (e) {
     var campuses = uniCafes.campuses();
 
@@ -50,7 +97,7 @@ main.on('click', 'down', function(e){
     });
     cafes.show();
 });
-
+*/
 
 Wakeup.on('wakeup', function(e) {
     shortVibeNotification();

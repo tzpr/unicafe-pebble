@@ -31,7 +31,9 @@ module.exports = (function(){
     }
 
     function showLunchMenu(menuObj){
-    // filter the correct menu for the current day
+        var lunchMenu;
+
+        // filter the correct menu for the current day
         function daysMenu(menuObj){
             var weekDay = new Date().getDay(); // su === 0
             var menuMessage = '';
@@ -43,7 +45,7 @@ module.exports = (function(){
             return menuMessage;
         }
 
-        var lunchMenu = new UI.Card({
+        lunchMenu = new UI.Card({
             title: menuObj.cafe,
             body: daysMenu(menuObj),
             scrollable: true,
