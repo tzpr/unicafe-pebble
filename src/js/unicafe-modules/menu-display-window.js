@@ -1,4 +1,5 @@
 var UI = require('ui');
+var log = require('unicafe-modules/uni-util').log;
 
 module.exports = (function(){
 
@@ -37,10 +38,11 @@ module.exports = (function(){
         function daysMenu(menuObj){
             var weekDay = new Date().getDay(); // su === 0
             var menuMessage = '';
+            
             if (weekDay === 0 || weekDay === 6) {
                 menuMessage = 'Ei ruokaa! \n Hyvää viikonloppua!';
             } else {
-                menuMessage = menuObj.days[weekDay].menu;
+                menuMessage = menuObj.days[weekDay-1].menu;
             }
             return menuMessage;
         }
