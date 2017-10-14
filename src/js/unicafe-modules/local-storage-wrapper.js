@@ -1,28 +1,28 @@
 
+var Settings = require('settings');
+var log = require('unicafe-modules/uni-util').log;
+
 module.exports = (function localStorageApi(){
     
-    function resetFavMeals(){
-        // erase favourite meals from local storage
-    }
-
-    function resetRestaurantSelections(){
-        // erase restaurant selections from local storage
-    }
-
-    function saveFavMeal(meal){
-
-    }
-
-    function saveRestaurantSelection(restaurantId){
-
+    function updateRestaurantWeight(cafeId){
+        var weights = Settings.data('cafeWeights');
+        if(!weights){
+            weights = {};
+            weights[cafeId] = 1;
+        }else{
+            if(weights[cafeId]){
+                weights[cafeId] = weights[cafeId] + 1;
+            }else{
+                weights[cafeId] = 1;
+            }
+        }
+        log(' updateRestaurantWeight: ' + JSON.stringify(weights));
+        Settings.data('cafeWeights', weights);
     }
 
 
     return{
-        saveFavouriteMeal: saveFavMeal,
-        resetFavouriteMeals: resetFavMeals,
-        saveRestaurantSelection: saveRestaurantSelection,
-        resetRestaurantSelections: resetRestaurantSelections
+        updateRestaurantWeight: updateRestaurantWeight
     };
 
 })();
