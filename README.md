@@ -16,10 +16,16 @@ Ruokalista ranteeseen
 * https://github.com/pebble/clay/blob/v0.1.7/README.md
 
 ### installation
+
+```
 virtualenv pebble-env --python=python2.7
-
+```
+```
 . pebble-env/bin/activate
-
+```
+```
 export PEBBLE_PHONE=phone-ip
-
+```
+```
 pebble build && pebble install
+```
