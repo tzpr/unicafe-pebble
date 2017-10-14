@@ -16,7 +16,7 @@ Ruokalista ranteeseen
 * https://github.com/pebble/clay/blob/v0.1.7/README.md
 
 ### installation
-Set python virtual env, pebble needs python 2.7
+
 ```
 virtualenv pebble-env --python=python2.7
 ```
