@@ -20,9 +20,14 @@ module.exports = (function localStorageApi(){
         Settings.data('cafeWeights', weights);
     }
 
+    function cafeWeights(){
+        return Settings.data('cafeWeights');
+    }
+
 
     return{
-        updateRestaurantWeight: updateRestaurantWeight
+        updateRestaurantWeight: updateRestaurantWeight,
+        cafeWeights: cafeWeights
     };
 
 })();

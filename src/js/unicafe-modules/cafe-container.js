@@ -1,5 +1,7 @@
 
 var UI = require('ui');
+var storage = require('unicafe-modules/local-storage-wrapper');
+
 
 module.exports = (function(){
 
@@ -82,7 +84,7 @@ module.exports = (function(){
     function allCafes(){
         return new UI.Menu({
             sections: [{
-                items: restaurantList
+                items: restaurantListWeighted() //restaurantList
             }]
         });
     }
@@ -100,6 +102,18 @@ module.exports = (function(){
             }]
         });
     }
+
+    function restaurantListWeighted(){
+        var list = restaurantList;
+        var weights = storage.cafeWeights();
+
+        if(weights){
+            // do the weighting
+        }
+
+        return list;
+    }
+
 
     return {
         all: allCafes,
