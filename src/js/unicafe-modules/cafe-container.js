@@ -6,55 +6,60 @@ var storage = require('unicafe-modules/local-storage-wrapper');
 module.exports = (function(){
 
     // list of available unicafes
-    // each have attribtutes:
-    //  id
-    //  name
-    //  campus 
     var restaurantList = [
         {
             id: 10,
             title: 'Chemicum',
             campus: 2,
+            weight: 0
         },
         {
             id: 11,
             title: 'Exactum',
             campus: 2,
+            weight: 0
         },
         {
             id: 16,
             title: 'Biokeskus',
             campus: 5,
+            weight: 0
         },
         {
             id: 17,
             title: 'Korona',
             campus: 5,
+            weight: 0
         },
         {
             id: 4,
             title: 'Päärakennus',
             campus: 1,
+            weight: 0
         },
         {
             id: 3,
             title: 'Porthania',
             campus: 1,
+            weight: 0
         },
         {
             id: 34,
             title: 'Porthania Opettajat',
             campus: 1,
+            weight: 0
         },
         {
             id: 18,
             title: 'Viikuna',
             campus: 5,
+            weight: 0
         },
         {
             id: 9,
             title: 'Ylioppilasaukio',
             campus: 1,
+            weight: 0
         },
     ];
 
@@ -84,7 +89,7 @@ module.exports = (function(){
     function allCafes(){
         return new UI.Menu({
             sections: [{
-                items: restaurantListWeighted() //restaurantList
+                items: restaurantListWeighted()
             }]
         });
     }
@@ -104,14 +109,22 @@ module.exports = (function(){
     }
 
     function restaurantListWeighted(){
-        var list = restaurantList;
-        var weights = storage.cafeWeights();
+        var weights = storage.cafeWeights(); // {"16": 4, "10", 1}
 
-        if(weights){
-            // do the weighting
+        if (weights) {
+            // update weights
+            for (var i = 0, n = restaurantList.length; i < n; i += 1) {
+                if (weights[restaurantList[i].id]) {   
+                    restaurantList[i].weight = weights[restaurantList[i].id];
+                }
+            }
+
+            restaurantList.sort(function(a, b) {
+                return b.weight - a.weight;
+            });
+            return restaurantList;
         }
-
-        return list;
+        return restaurantList;
     }
 
 
