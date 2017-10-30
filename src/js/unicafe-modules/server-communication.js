@@ -6,14 +6,13 @@ var log = require('unicafe-modules/uni-util').log;
 module.exports = (function server() {
 
     // could be in settings
-    var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/';
-    var staticDevMenuJson;
-    var offlineDev = false;
+    var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/',
+        staticDevMenuJson,
+        offlineDev = false;
 
     if (offlineDev) {
         staticDevMenuJson = require('../dev-data/menu-json');
     }
-
 
     function menuByRestaurant(restaurantId, display) {
         if (staticDevMenuJson) {
@@ -40,7 +39,7 @@ module.exports = (function server() {
     }
 
     function menusForCampus(campusId){
-        return 'dadaa';
+        return 'dadaa ' + campusId;
     }
 
     function searchFavorites(listOfFavMeals, campusId, display){
@@ -50,10 +49,8 @@ module.exports = (function server() {
     }
 
     
-    // public api
     return {
         getMenuByRestaurant: menuByRestaurant,
         searchFavorites: searchFavorites
     };
-
 })();

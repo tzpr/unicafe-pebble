@@ -31,25 +31,9 @@ var main = new UI.Menu({
         }]
     }]
 }); 
-    /*
-    // alternative ui
-    new UI.Card({
-    title: 'PebbleCafe',
-    body: 'Lounasterve! Ravintolat valitse R. Kampukset valitse K',
-    action: {
-        up: 'images/menu_icon.png',
-        down: 'images/menu_icon.png',
-        select: 'images/menu_icon.png'
-    })});
-    */
-
 
 main.show();
 
-// example
-//Settings.data('playerInfo', { id: 1, name: 'Gordon Freeman' });
-//var playerInfo = Settings.data('playerInfo');
-//console.log("Player's name is " + playerInfo.name);
 
 main.on('select', function (e) {
     var campuses = uniCafes.campuses();
@@ -90,7 +74,7 @@ Wakeup.on('wakeup', function(e) {
     shortVibeNotification();
 });
 
-// kind of a hackish thing before setting wakeup events.
+// reset first
 Wakeup.cancel('all');
 
 // Set the wakeup events

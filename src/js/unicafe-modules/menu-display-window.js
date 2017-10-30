@@ -2,21 +2,21 @@ var UI = require('ui');
 
 module.exports = (function(){
 
-    function parse(data, cafeId){
     // parse menu
-        var menuObj = {};
-        var dayz = data.data;
-        var days = [];
-        var mealsList;
-        var lunch;
+    function parse(data, cafeId){
+        var menuObj = {},
+            dayz = data.data,
+            days = [],
+            mealsList,
+            lunch;
         
         menuObj.cafeId = cafeId;
         menuObj.cafe = data.information.restaurant;
 
-        for (var i = 0; i < 5; i += 1){ // take just first 5 days
+        for (var i = 0; i < 5; i += 1) { // take just first 5 days
             mealsList = dayz[i].data;
             lunch = '';
-            for (var j = 0; j < mealsList.length; j += 1){
+            for (var j = 0; j < mealsList.length; j += 1) {
                 lunch = lunch + mealsList[j].name;
                 lunch = lunch + ' (' + mealsList[j].price.name + ') \n';
             }
