@@ -1,5 +1,4 @@
 var UI = require('ui');
-var log = require('unicafe-modules/uni-util').log;
 
 module.exports = (function(){
 

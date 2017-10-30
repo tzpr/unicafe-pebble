@@ -52,6 +52,8 @@ main.show();
 //console.log("Player's name is " + playerInfo.name);
 
 main.on('select', function (e) {
+    var campuses = uniCafes.campuses();
+
     switch (e.item.id){
     case 2:
         var cafes = uniCafes.all();
@@ -62,8 +64,6 @@ main.on('select', function (e) {
         cafes.show();
         break;
     case 1:
-        var campuses = uniCafes.campuses();
-            
         campuses.on('select', function (e) {
             var cafes = uniCafes.byCampus(e.item.id);
         
@@ -75,37 +75,16 @@ main.on('select', function (e) {
         campuses.show();
         break;
     case 888:
-        lunchMenu.getFavs();
+        campuses.on('select', function (e) {
+            lunchMenu.getFavs(e.item.id);
+        }); 
+        campuses.show();
         break;
     default:
         log('ERROR: could not resolve input');    
     }
 });
-/*
-// for the alternative ui
-main.on('click', 'up', function (e) {
-    var campuses = uniCafes.campuses();
 
-    campuses.on('select', function (e) {
-        var cafes = uniCafes.byCampus(e.item.id);
-
-        cafes.on('select', function (e) {
-            lunchMenu.get(e.item.id);
-        });
-        cafes.show();
-    });
-    campuses.show();
-});
-
-main.on('click', 'down', function(e){
-    var cafes = uniCafes.all();
-    
-    cafes.on('select', function (e) {
-        lunchMenu.get(e.item.id);
-    });
-    cafes.show();
-});
-*/
 
 Wakeup.on('wakeup', function(e) {
     shortVibeNotification();
