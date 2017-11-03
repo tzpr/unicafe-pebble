@@ -6,13 +6,13 @@ module.exports = (function(){
 
     // parse menu
     function parse(data, cafeId){
-        showLunchMenu(util.parseMenu(data, cafeId));
+        showLunchMenu(util.parseDaysMenu(data, cafeId));
     }
 
     function showLunchMenu(menuObj){
         var lunchMenu = new UI.Card({
             title: menuObj.cafe,
-            body: util.daysMenu(menuObj),
+            body: menuObj,
             scrollable: true,
         });
 
