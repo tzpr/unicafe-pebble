@@ -1,20 +1,20 @@
 
 var ajax = require('ajax');
 var log = require('unicafe-modules/uni-util').log;
+var cafeContainer = require('unicafe-modules/cafe-container');
 
 
 module.exports = (function server() {
-
     // could be in settings
-    var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/',
-        staticDevMenuJson,
-        offlineDev = false;
+    var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/';
+    var staticDevMenuJson;
+    var offlineDev = false;
 
     if (offlineDev) {
         staticDevMenuJson = require('../dev-data/menu-json');
     }
 
-    function menuByRestaurant(restaurantId, display) {
+    function getMenuByRestaurant(restaurantId, display) {
         if (staticDevMenuJson) {
             return staticDevMenuJson;
         } else {
@@ -38,19 +38,49 @@ module.exports = (function server() {
         }
     }
 
-    function menusForCampus(campusId){
-        return 'dadaa ' + campusId;
+    function getMenusForCampus(campusId, callback, favsList){
+        var cafeList = cafeContainer.cafeListByCampus(campusId); 
+        var menus = [];
+        
+        function lastRestaurant(){
+            return menus.length === cafeList.length;
+        }
+
+        function errorObject(message, status){
+            var menuErrorObject = {};
+            menuErrorObject.message = message;
+            menuErrorObject.status = status;
+        }
+
+        for (var i = 0; i < cafeList.length; i++) {
+            log('*** menuByRestaurant: ' + (SERVER_URL + cafeList[i].id));
+            ajax({
+                method: 'get',
+                url: (SERVER_URL + cafeList[i].id),
+                type: 'json'
+            },
+            function (data, status, request) {
+                log('GET success');
+                menus.push(data);
+                if (lastRestaurant()) {                  
+                    callback(menus, favsList);
+                }
+            },
+            function (message, status, request) {
+                log('GET failure: message:' + message + ' status: ' + status); 
+                menus.push(errorObject(message, status));
+            });            
+        }
     }
 
     function searchFavorites(listOfFavMeals, campusId, display){
         log('searchFavorites: ' + listOfFavMeals + ' campusId: ' + campusId );
-
-        display(menusForCampus(campusId), listOfFavMeals);
+        getMenusForCampus(campusId, display, listOfFavMeals);
     }
 
     
     return {
-        getMenuByRestaurant: menuByRestaurant,
+        getMenuByRestaurant: getMenuByRestaurant,
         searchFavorites: searchFavorites
     };
 })();

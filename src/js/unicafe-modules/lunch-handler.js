@@ -50,6 +50,7 @@ module.exports = (function(){
         } else {
             // TODO: ask favorites from user and save selections to local storage
             storage.favoriteFoodSelection(favFoodTemplate);
+            server.searchFavorites(storage.favoriteFoodSelection(), campusId, favoritesUI.show);
         }
     }
 

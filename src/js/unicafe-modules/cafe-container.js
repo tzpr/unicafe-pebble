@@ -101,9 +101,13 @@ module.exports = (function(){
                 list.push(restaurantList[i]);
             }
         }
+        return list;
+    }
+
+    function restaurantsMenuByCampus(campusId){
         return new UI.Menu({
             sections: [{
-                items: list
+                items: restaurantsByCampus(campusId)
             }]
         });
     }
@@ -130,7 +134,8 @@ module.exports = (function(){
 
     return {
         all: allCafes,
-        byCampus: restaurantsByCampus,
-        campuses: campuses
+        byCampus: restaurantsMenuByCampus,
+        campuses: campuses,
+        cafeListByCampus: restaurantsByCampus
     };
 })();
