@@ -26,6 +26,10 @@ module.exports = (function(){
             selected: true,
         },
         {
+            food: 'kirjolohi',
+            selected: true,
+        },        
+        {
             food: 'siskonmakkara',
             selected: true,
         },  
