@@ -78,7 +78,7 @@ Wakeup.on('wakeup', function(e) {
 Wakeup.cancel('all');
 
 // Set the wakeup events
-Wakeup.schedule({time: Clock.weekday('monday', 10, 15)},
+Wakeup.schedule({time: Clock.weekday('monday', 10, 25)},
     function(e) {
         if (e.failed) {
             log('Wakeup set failed: ' + e.error);
@@ -88,7 +88,7 @@ Wakeup.schedule({time: Clock.weekday('monday', 10, 15)},
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('tuesday', 10, 15)},
+Wakeup.schedule({time: Clock.weekday('tuesday', 10, 25)},
     function(e) {
         if (e.failed) {
             log('Wakeup set failed: ' + e.error);
@@ -98,7 +98,7 @@ Wakeup.schedule({time: Clock.weekday('tuesday', 10, 15)},
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('wednesday', 10, 15)},
+Wakeup.schedule({time: Clock.weekday('wednesday', 10, 25)},
     function(e) {
         if (e.failed) {
             log('Wakeup set failed: ' + e.error);
@@ -108,7 +108,7 @@ Wakeup.schedule({time: Clock.weekday('wednesday', 10, 15)},
     }
 );
 
-Wakeup.schedule({time: Clock.weekday('thursday', 10, 15)},
+Wakeup.schedule({time: Clock.weekday('thursday', 10, 25)},
     function(e) {
         if (e.failed) {
             log('Wakeup set failed: ' + e.error);
@@ -118,7 +118,7 @@ Wakeup.schedule({time: Clock.weekday('thursday', 10, 15)},
     }
 );
 
-Wakeup.schedule({time:  Clock.weekday('friday', 10, 15)},
+Wakeup.schedule({time:  Clock.weekday('friday', 10, 25)},
     function(e) {
         if (e.failed) {
             log('Wakeup set failed: ' + e.error);
