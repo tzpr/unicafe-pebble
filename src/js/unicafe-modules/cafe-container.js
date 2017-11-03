@@ -38,7 +38,7 @@ module.exports = (function(){
             weight: 0
         },
         {
-            id: 3,
+            id: 39,
             title: 'Porthania',
             campus: 1,
             weight: 0
@@ -46,6 +46,12 @@ module.exports = (function(){
         {
             id: 34,
             title: 'Porthania Opettajat',
+            campus: 1,
+            weight: 0
+        },
+        {
+            id: 1,
+            title: 'Metsätalo',
             campus: 1,
             weight: 0
         },
