@@ -51,7 +51,7 @@ module.exports = (function(){
     };
         
     var log = function log(message){
-        var logging = true;
+        var logging = false;
 
         if (logging) {
             console.log(message + ' this: ' + this);

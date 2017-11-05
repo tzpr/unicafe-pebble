@@ -18,19 +18,19 @@ module.exports = (function(){
             selected: true,
         },
         {
-            food: 'silakkapihvi',
+            food: 'silakkapihvit',
             selected: true,
         },
         {
-            food: 'savulohi',
+            food: 'savulohisalaatti',
             selected: true,
         },
         {
-            food: 'kirjolohi',
+            food: 'kirjolohisalaatti',
             selected: true,
         },        
         {
-            food: 'siskonmakkara',
+            food: 'siskonmakkarakeitto',
             selected: true,
         },  
         {
@@ -38,7 +38,7 @@ module.exports = (function(){
             selected: true,
         },
         {
-            food: 'vuohen',
+            food: 'vuohenjuustosalaatti',
             selected: true,
         },            
     ];

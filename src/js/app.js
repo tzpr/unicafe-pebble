@@ -27,7 +27,7 @@ var main = new UI.Menu({
         {
             id: 888,
             title: ' Suosikit ',
-            subtitle: 'Jotain ekstraa...',
+            subtitle: 'Hae lempiruokia',
         }]
     }]
 }); 
