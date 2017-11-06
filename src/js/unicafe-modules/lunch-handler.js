@@ -10,37 +10,37 @@ module.exports = (function(){
     // hard coded predefined values for now. later maybe else.
     var favFoodTemplate = [
         {
-            food: 'lihapulla',
+            food: 'Lihapullat',
             selected: true,
         },
         {
-            food: 'hernekeitto',
+            food: 'Hernekeitto',
             selected: true,
         },
         {
-            food: 'silakkapihvit',
+            food: 'Silakkapihvit',
             selected: true,
         },
         {
-            food: 'savulohisalaatti',
+            food: 'Savulohisalaatti',
             selected: true,
         },
         {
-            food: 'kirjolohisalaatti',
+            food: 'Kirjolohisalaatti',
             selected: true,
         },        
         {
-            food: 'siskonmakkarakeitto',
-            selected: true,
-        },  
-        {
-            food: 'kasvis',
+            food: 'Siskonmakkarakeitto',
             selected: true,
         },
         {
-            food: 'vuohenjuustosalaatti',
+            food: 'Vuohenjuustosalaatti',
             selected: true,
-        },            
+        },     
+        {
+            food: 'Broileri-Caesarsalaatti',
+            selected: true,
+        },       
     ];
 
     function displayMenu(cafeId){

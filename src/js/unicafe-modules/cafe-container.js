@@ -44,6 +44,12 @@ module.exports = (function(){
             weight: 0
         },
         {
+            id: 38,
+            title: 'Rotunda',
+            campus: 1,
+            weight: 0
+        },        
+        {
             id: 34,
             title: 'Porthania Opettajat',
             campus: 1,
@@ -55,6 +61,24 @@ module.exports = (function(){
             campus: 1,
             weight: 0
         },
+        {
+            id: 37,
+            title: 'Ravintola Oliver',
+            campus: 1,
+            weight: 0
+        }, 
+        {
+            id: 2,
+            title: 'Olivia',
+            campus: 1,
+            weight: 0
+        },  
+        {
+            id: 7,
+            title: 'Pesco & Vege Topelias',
+            campus: 1,
+            weight: 0
+        },       
         {
             id: 18,
             title: 'Viikuna',
