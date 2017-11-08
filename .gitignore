@@ -17,7 +17,11 @@ src/js/wakeup/
 src/main.c
 src/simply/
 src/util/
-venv/
 waftools/
 wscript
+
+# python env
 pebble-env
+
+# config page lib
+src/js/clay.js
