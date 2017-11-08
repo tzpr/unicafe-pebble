@@ -8,8 +8,16 @@ var Clock = require('clock'),
     uniCafes = require('unicafe-modules/cafe-container'),
     lunchMenu = require('unicafe-modules/lunch-handler'),
     log = require('unicafe-modules/uni-util').log,
-    shortVibeNotification = require('unicafe-modules/uni-util').shortVibe;
+    shortVibeNotification = require('unicafe-modules/uni-util').shortVibe,
+    Clay = require('clay'),
+    clayConfig = require('config.json');
 
+
+var clay = new Clay(clayConfig);
+
+//Clay.getItemsById();
+
+//log(' *** CONFIG: ' + Clay.getItemsById());
 
 var main = new UI.Menu({
     sections: [{

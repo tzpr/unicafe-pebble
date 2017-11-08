@@ -1,0 +1,26 @@
+[
+    {
+        "type": "section",
+        "items": [
+          {
+            "type": "heading",
+            "defaultValue": "Pebble Cafe Settings"
+          },
+          {
+            "type": "input",
+            "appKey": "menuApiAddress",
+            "label": "Unicafe menu API address",
+            "defaultValue": "http://server-address"
+          },
+          {
+            "type": "toggle",
+            "appKey": "enableVibeNotification",
+            "label": "Enable Vibe Notification"
+          }
+        ]
+      },
+      {
+        "type": "submit",
+        "defaultValue": "Save"
+      }
+  ]
