@@ -50,11 +50,15 @@ module.exports = (function(){
         Vibe.vibrate('short');
     };
         
-    var log = function log(message){
-        var logging = false;
-
+    var log = function log(message, obj){
+        var logging = true;
+        
         if (logging) {
-            console.log(message + ' this: ' + this);
+            if (obj) {
+                console.log(message + ' ' + JSON.stringify(obj) );
+            } else {
+                console.log(message);
+            }
         }     
     };
 
