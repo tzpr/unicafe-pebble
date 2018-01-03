@@ -6,8 +6,8 @@ module.exports = (function localStorageApi(){
 
     // local storage keys
     var CAFE_WEIGHTS = 'cafeWeights',
-        FAVORITE_FOODS = 'favoriteFoods';
-    
+        FAVORITE_FOODS = 'favoriteFoods',
+        MENU_SERVER_URL = 'menuApiAddress'; 
 
     function updateRestaurantWeight(cafeId){
         var weights = Settings.data(CAFE_WEIGHTS);
@@ -39,11 +39,16 @@ module.exports = (function localStorageApi(){
         }
     }
 
+    function serverUrl(){
+        return Settings.option(MENU_SERVER_URL);
+    }
+
 
     return{
         updateRestaurantWeight: updateRestaurantWeight,
         cafeWeights: cafeWeights,
         favoriteFoodSelection: favoriteFood,
+        serverUrl: serverUrl,
     };
 
 })();

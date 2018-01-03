@@ -2,11 +2,10 @@
 var ajax = require('ajax');
 var log = require('unicafe-modules/uni-util').log;
 var cafeContainer = require('unicafe-modules/cafe-container');
+var storage = require('unicafe-modules/local-storage-wrapper');
 
 
 module.exports = (function server() {
-    // could be in settings
-    var SERVER_URL = 'http://messi.hyyravintolat.fi/publicapi/restaurant/';
     var staticDevMenuJson;
     var offlineDev = false;
 
@@ -18,10 +17,10 @@ module.exports = (function server() {
         if (staticDevMenuJson) {
             return staticDevMenuJson;
         } else {
-            log('*** menuByRestaurant: ' + (SERVER_URL + restaurantId));
+            log('***** menuByRestaurant: ' + (storage.serverUrl() + restaurantId));
             ajax({
                 method: 'get',
-                url: (SERVER_URL + restaurantId),
+                url: (storage.serverUrl() + restaurantId),
                 type: 'json'
             },
             function (data, status, request) {
@@ -53,10 +52,10 @@ module.exports = (function server() {
         }
 
         for (var i = 0; i < cafeList.length; i++) {
-            log('*** menuByRestaurant: ' + (SERVER_URL + cafeList[i].id));
+            log('*** menuByRestaurant: ' + (storage.serverUrl() + cafeList[i].id));
             ajax({
                 method: 'get',
-                url: (SERVER_URL + cafeList[i].id),
+                url: (storage.serverUrl() + cafeList[i].id),
                 type: 'json'
             },
             function (data, status, request) {

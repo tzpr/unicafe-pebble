@@ -10,12 +10,13 @@
             "type": "input",
             "appKey": "menuApiAddress",
             "label": "Unicafe menu API address",
-            "defaultValue": "http://server-address"
+            "defaultValue": "VALUE_NOT_SET"
           },
           {
             "type": "toggle",
             "appKey": "enableVibeNotification",
-            "label": "Enable Vibe Notification"
+            "label": "Enable Vibe Notification",
+            "defaultValue": true
           }
         ]
       },
