@@ -8,7 +8,8 @@ var Clock = require('clock'),
     uniCafes = require('unicafe-modules/cafe-container'),
     lunchMenu = require('unicafe-modules/lunch-handler'),
     log = require('unicafe-modules/uni-util').log,
-    shortVibeNotification = require('unicafe-modules/uni-util').shortVibe;
+    shortVibeNotification = require('unicafe-modules/uni-util').shortVibe,
+    settings = require('unicafe-modules/local-storage-wrapper');
 
 // configuration page setup
 require('unicafe-modules/cafe-configuration');
@@ -73,7 +74,9 @@ main.on('select', function (e) {
 
 
 Wakeup.on('wakeup', function(e) {
-    shortVibeNotification();
+    if (settings.vibe()) {
+        shortVibeNotification();
+    }
 });
 
 // reset first

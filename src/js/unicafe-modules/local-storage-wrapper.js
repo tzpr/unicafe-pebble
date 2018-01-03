@@ -7,7 +7,8 @@ module.exports = (function localStorageApi(){
     // local storage keys
     var CAFE_WEIGHTS = 'cafeWeights',
         FAVORITE_FOODS = 'favoriteFoods',
-        MENU_SERVER_URL = 'menuApiAddress'; 
+        MENU_SERVER_URL = 'menuApiAddress',
+        VIBE = 'enableVibeNotification';
 
     function updateRestaurantWeight(cafeId){
         var weights = Settings.data(CAFE_WEIGHTS);
@@ -43,12 +44,17 @@ module.exports = (function localStorageApi(){
         return Settings.option(MENU_SERVER_URL);
     }
 
+    function vibe(){
+        return Settings.option(VIBE) == true ? true : false;
+    }
+
 
     return{
         updateRestaurantWeight: updateRestaurantWeight,
         cafeWeights: cafeWeights,
         favoriteFoodSelection: favoriteFood,
         serverUrl: serverUrl,
+        vibe: vibe,
     };
 
 })();
