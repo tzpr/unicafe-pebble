@@ -30,14 +30,8 @@ module.exports = (function localStorageApi(){
         return Settings.data(CAFE_WEIGHTS);
     }
 
-    function favoriteFood(favoriteList){
-        if (favoriteList) {
-            // act as a setter
-            Settings.data(FAVORITE_FOODS, favoriteList);
-        } else {
-            // act as a getter
-            return Settings.data(FAVORITE_FOODS);
-        }
+    function favoriteFood(){
+        return Settings.option(FAVORITE_FOODS);
     }
 
     function serverUrl(){

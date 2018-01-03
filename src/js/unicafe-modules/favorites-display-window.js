@@ -9,6 +9,10 @@ module.exports = (function(){
         var favoritesString = '';
         var m;
         var dm;
+
+        function capitalFirstLetter(string){
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
         
         // parse and search favorites from each cafe for today
         // construct list of cafes
@@ -17,10 +21,10 @@ module.exports = (function(){
             dm = util.daysMenu(m);
             log('days menu: ' + dm);
 
-            for(var d = 0; d < listOfFavMeals.length; d++){
-                if(dm.toUpperCase().includes(listOfFavMeals[d].food.toUpperCase())){
+            for (var d = 0; d < listOfFavMeals.length; d++) {
+                if (dm.toUpperCase().includes(listOfFavMeals[d].toUpperCase())) {
                     favoritesString += m.cafe + '\n' +
-                    listOfFavMeals[d].food + '\n';
+                    capitalFirstLetter(listOfFavMeals[d]) + '\n';
                 }
             }
             log('FAVS: ' + m.cafe);
@@ -38,7 +42,7 @@ module.exports = (function(){
                 body: favoritesString,
                 scrollable: true,
             });        
-        }else{
+        } else {
             favorites = new UI.Card({
                 title: 'Suosikit',
                 body: 'Ei suosikkeja tänään tarjolla.',

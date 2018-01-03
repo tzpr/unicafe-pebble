@@ -17,6 +17,42 @@
             "appKey": "enableVibeNotification",
             "label": "Enable Vibe Notification",
             "defaultValue": true
+          },
+          {
+            "type": "checkboxgroup",
+            "appKey": "favoriteFoods",
+            "label": "Favorite foods",
+            "defaultValue": ["silakkapihvit", "siskonmakkarakeitto"],
+            "options": [
+              { 
+                "label": "Lihapullat", 
+                "value": "lihapullat" 
+              },
+              { 
+                "label": "Hernekeitto", 
+                "value": "hernekeitto" 
+              },
+              { 
+                "label": "Silakkapihvit", 
+                "value": "silakkapihvit" 
+              },
+              { 
+                "label": "Savulohisalaatti", 
+                "value": "savulohisalaatti" 
+              },
+              { 
+                "label": "Siskonmakkarakeitto", 
+                "value": "siskonmakkarakeitto" 
+              },
+              { 
+                "label": "Vuohenjuustosalaatti", 
+                "value": "vuohenjuustosalaatti" 
+              },
+              { 
+                "label": "Vuohenjuusto-pestosalaatti", 
+                "value": "vuohenjuusto-pestosalaatti" 
+              }
+            ]
           }
         ]
       },
