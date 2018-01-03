@@ -51,7 +51,7 @@ module.exports = (function(){
     };
         
     var log = function log(message, obj){
-        var logging = true;
+        var logging = false;
         
         if (logging) {
             if (obj) {
