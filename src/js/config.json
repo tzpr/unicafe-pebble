@@ -17,7 +17,7 @@
             "appKey": "enableVibeNotification",
             "label": "Enable Vibe Notification",
             "defaultValue": true
-          },
+          },          
           {
             "type": "checkboxgroup",
             "appKey": "favoriteFoods",
@@ -53,6 +53,18 @@
                 "value": "vuohenjuusto-pestosalaatti" 
               }
             ]
+          },
+          {
+            "type": "toggle",
+            "appKey": "executeOnAWS",
+            "label": "Use AWS Lambdas",
+            "defaultValue": true
+          },
+          {
+            "type": "toggle",
+            "appKey": "useWeightedLists",
+            "label": "Use weighted lists",
+            "defaultValue": true
           }
         ]
       },
