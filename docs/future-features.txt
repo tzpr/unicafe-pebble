@@ -1,0 +1,6 @@
+
+1. AWS Lambdas
+Move some calculation to AWS Lambda functions, from mobile to cloud.
+
+2. ES6 and Babel
+Migrate sources to ES6 and compile back to ES5 with Babel
